@@ -1,0 +1,8 @@
+
+{
+  "name": "PRHIMA Mão de Obra e Serviços",
+  "description": "Landing page profissional para a PRHIMA, especializada em terceirização de mão de obra com blindagem jurídica.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
