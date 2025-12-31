@@ -534,7 +534,7 @@ body {
 }
 
 .hero-title {
-    @apply text-4xl lg:text-6xl font-black leading-none tracking-tighter;
+    @apply text-4xl lg:text-5xl font-black leading-tight tracking-tighter;
 }
 
 .hero-title-highlight {
