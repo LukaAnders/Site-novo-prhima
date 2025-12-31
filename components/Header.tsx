@@ -40,13 +40,13 @@ export const Header: React.FC = () => {
   return (
     <header className={`main-header ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-6'}`}>
       <div className="header-container">
-        <div className="logo-wrapper group" onClick={() => handleNavClick('home')}>
-          <div className="logo-image-wrapper">
+        <div className="logo-wrapper group flex items-center" onClick={() => handleNavClick('home')}>
+          <div className="logo-image-wrapper flex-shrink-0">
             {!imageError ? (
               <img 
                 src={LOGO_FILENAME} 
                 alt="Logo PRHIMA" 
-                className="logo-image"
+                className="logo-image m-0 p-0 mr-0.5"
                 onError={() => setImageError(true)} 
               />
             ) : (
@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
             )}
           </div>
           
-          <div className="logo-text-wrapper -ml-8">
+          <div className="logo-text-wrapper">
             <span className={`logo-title ${isScrolled ? 'text-navy' : 'text-white'}`}>PRHIMA</span>
             <span className="logo-subtitle">Mão de Obra e Serviços</span>
           </div>
