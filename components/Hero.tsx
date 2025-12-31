@@ -25,9 +25,9 @@ export const Hero: React.FC = () => {
                 <span className="hero-eyebrow-text">Especialista em Blindagem Jurídica</span>
             </div>
             <h1 className="hero-title">
-              SUA OPERAÇÃO <br/>
-              <span className="hero-title-highlight">SEM RISCOS</span> <br/>
-              TRABALHISTAS.
+              TERCEIRIZAÇÃO DE MÃO DE OBRA <br/>
+              <span className="hero-title-highlight">COM SEGURANÇA E RESPALDO</span> <br/>
+              JURÍDICO TRABALHISTA.
             </h1>
             <p className="hero-paragraph">
               Assumimos 100% da responsabilidade jurídica e operacional da sua mão de obra com segurança absoluta.
