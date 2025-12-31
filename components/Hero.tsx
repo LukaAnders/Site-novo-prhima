@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
             <h1 className="hero-title">
               TERCEIRIZAÇÃO DE MÃO DE OBRA <br/>
               <span className="hero-title-highlight">
-                COM SEGURANÇA E RESPALDO JURÍDICO TRABALHISTA.
+                COM SEGURANÇA E RESPALDO <br/> JURÍDICO TRABALHISTA.
               </span>
             </h1>
             <p className="hero-paragraph">
