@@ -141,7 +141,7 @@ body {
 }
 
 .about-section {
-    @apply py-20 bg-gray-50;
+    @apply py-12 bg-gray-50;
 }
 
 .about-container {
@@ -388,11 +388,11 @@ body {
 
 /* Footer  */
 .site-footer {
-    @apply bg-navy pt-24 pb-12 border-t border-white/10;
+    @apply bg-navy pt-12 pb-8 border-t border-white/10;
 }
 
 .footer-grid {
-    @apply grid md:grid-cols-4 gap-16 mb-20;
+    @apply grid md:grid-cols-4 gap-8 mb-10;
 }
 
 .footer-logo-column {
@@ -425,7 +425,7 @@ body {
 
 /* Governance Section  */
 .governance-section {
-    @apply py-20 bg-white;
+    @apply py-12 bg-white;
 }
 
 .governance-heading-wrapper {
@@ -644,7 +644,7 @@ body {
 
 /* Services Section */
 .services-section {
-    @apply py-24 bg-white;
+    @apply py-12 bg-white;
 }
 
 .services-heading-wrapper {
