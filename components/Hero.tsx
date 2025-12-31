@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
                 <span className="hero-eyebrow-text">Especialista em Blindagem Jurídica</span>
             </div>
             <h1 className="hero-title">
-              TERCEIRIZAÇÃO DE MÃO DE OBRA <br/>
+              <span className="text-2xl lg:text-4xl">TERCEIRIZAÇÃO DE MÃO DE OBRA</span> <br/>
               <span className="hero-title-highlight">
                 COM SEGURANÇA E RESPALDO <br/> JURÍDICO TRABALHISTA.
               </span>
