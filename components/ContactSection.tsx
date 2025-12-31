@@ -1,19 +1,37 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from '@formspree/react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [state, handleSubmit] = useForm('xojqgeww');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
+  if (state.succeeded) {
+    return (
+      <section id="contato" className="contact-section">
+        <div className="about-container">
+          <div className="contact-grid">
+            {/* Mantém a coluna da esquerda para consistência de layout */}
+            <div className="contact-info-panel" />
 
-    setTimeout(() => {
-      setStatus('success');
-      setTimeout(() => setStatus('idle'), 5000);
-    }, 1500);
-  };
+            <div className="contact-form-wrapper">
+              <div className="contact-form-bg-shape"></div>
+              <div className="contact-form-container">
+                <div className="form-success-state animate-(fade-up)">
+                  <div className="form-success-icon-wrapper">
+                    <CheckCircle size={48} />
+                  </div>
+                  <h3 className="form-success-title">Mensagem Enviada!</h3>
+                  <p className="form-success-paragraph">Um de nossos especialistas entrará em contato em menos de 2 horas.</p>
+                  {/* O Formspree lida com o reset, então não precisamos de um botão aqui. */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="contato" className="contact-section">
@@ -61,54 +79,40 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <div className="contact-form-wrapper">
-            {/* Background Shape */}
             <div className="contact-form-bg-shape"></div>
-
             <div className="contact-form-container">
-              {status === 'success' ? (
-                <div className="form-success-state animate-(fade-up)">
-                  <div className="form-success-icon-wrapper">
-                    <CheckCircle size={48} />
-                  </div>
-                  <h3 className="form-success-title">Mensagem Enviada!</h3>
-                  <p className="form-success-paragraph">Um de nossos especialistas entrará em contato em menos de 2 horas.</p>
-                  <button onClick={() => setStatus('idle')} className="form-success-reset-button">Enviar Nova Mensagem</button>
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-group">
+                  <label htmlFor="name" className="form-label">Seu Nome</label>
+                  <input id="name" required type="text" name="name" className="form-input" placeholder="Ex: João Silva" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="contact-form">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div className="form-group">
-                    <label className="form-label">Seu Nome</label>
-                    <input required type="text" className="form-input" placeholder="Ex: João Silva" />
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="form-group">
-                      <label className="form-label">E-mail Corporativo</label>
-                      <input required type="email" className="form-input" placeholder="joao@empresa.com" />
-                    </div>
-                    <div className="form-group">
-                      <label className="form-label">WhatsApp</label>
-                      <input required type="tel" className="form-input" placeholder="(31) 99999-9999" />
-                    </div>
+                    <label htmlFor="email" className="form-label">E-mail Corporativo</label>
+                    <input id="email" required type="email" name="email" className="form-input" placeholder="joao@empresa.com" />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Como podemos ajudar?</label>
-                    <textarea required className="form-input form-textarea" placeholder="Conte-nos sobre sua demanda..."></textarea>
+                    <label htmlFor="phone" className="form-label">WhatsApp</label>
+                    <input id="phone" required type="tel" name="phone" className="form-input" placeholder="(31) 99999-9999" />
                   </div>
-
-                  <button
-                    disabled={status === 'loading'}
-                    className={`form-submit-button ${status === 'loading' ? 'bg-gray-100 text-gray-400' : 'bg-navy text-white hover:bg-navy/95 shadow-xl shadow-navy/20'
-                      }`}
-                  >
-                    {status === 'loading' ? 'Enviando...' : (
-                      <>
-                        Solicitar Proposta Blindada
-                        <Send size={16} />
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message" className="form-label">Como podemos ajudar?</label>
+                  <textarea id="message" required name="message" className="form-input form-textarea" placeholder="Conte-nos sobre sua demanda..."></textarea>
+                </div>
+                <button
+                  type="submit"
+                  disabled={state.submitting}
+                  className={`form-submit-button ${state.submitting ? 'bg-gray-100 text-gray-400' : 'bg-navy text-white hover:bg-navy/95 shadow-xl shadow-navy/20'}`}
+                >
+                  {state.submitting ? 'Enviando...' : (
+                    <>
+                      Solicitar Proposta Blindada
+                      <Send size={16} />
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -116,3 +120,4 @@ export const ContactSection: React.FC = () => {
     </section>
   );
 };
+

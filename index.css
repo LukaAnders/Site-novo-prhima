@@ -896,3 +896,33 @@ body {
 .trusted-by-logo-placeholder {
     @apply h-12 w-32 bg-white/20 rounded-md;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-carousel {
+    @apply relative w-full overflow-hidden;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.logo-carousel-track {
+    @apply flex;
+    animation: scroll 40s linear infinite;
+}
+
+.logo-carousel-item {
+    @apply h-12 w-auto mx-8 flex-shrink-0;
+    filter: grayscale(100%) opacity(60%);
+    transition: all 0.3s ease;
+}
+
+.logo-carousel-item:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.1);
+}

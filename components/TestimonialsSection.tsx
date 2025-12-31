@@ -48,11 +48,15 @@ export const TestimonialsSection: React.FC = () => {
 
         <div className="trusted-by-wrapper">
           <p className="trusted-by-title">Empresas que confiam na PRHIMA</p>
-          <div className="trusted-by-logos">
-            <div className="trusted-by-logo-placeholder"></div>
-            <div className="trusted-by-logo-placeholder"></div>
-            <div className="trusted-by-logo-placeholder"></div>
-            <div className="trusted-by-logo-placeholder"></div>
+          <div className="logo-carousel">
+            <div className="logo-carousel-track">
+              {[...Array(14)].map((_, i) => (
+                <img key={i} src={`/logo-${String(i + 1).padStart(2, '0')}.jpeg`} alt={`Logo ${i + 1}`} className="logo-carousel-item" />
+              ))}
+              {[...Array(14)].map((_, i) => (
+                <img key={i + 14} src={`/logo-${String(i + 1).padStart(2, '0')}.jpeg`} alt={`Logo ${i + 1}`} className="logo-carousel-item" />
+              ))}
+            </div>
           </div>
         </div>
       </div>
