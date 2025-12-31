@@ -78,7 +78,7 @@ body {
 
 /* Logo */
 .logo-wrapper {
-    @apply flex items-center gap-4 cursor-pointer;
+    @apply flex items-center cursor-pointer;
 }
 
 .logo-image {

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Truck, Construction, Factory, Building2, Stethoscope, ChevronRight, Clock, Check } from 'lucide-react';
+import { Truck, Construction, Factory, Building2, ConciergeBell, ChevronRight, Clock, Check } from 'lucide-react';
 
 export const ServicesSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -37,7 +37,7 @@ export const ServicesSection: React.FC = () => {
     { icon: <Construction />, label: 'Construção Civil' },
     { icon: <Factory />, label: 'Indústria' },
     { icon: <Building2 />, label: 'Condomínios' },
-    { icon: <Stethoscope />, label: 'Hospitalidade' },
+    { icon: <ConciergeBell />, label: 'Hospitalidade' },
   ];
 
   return (

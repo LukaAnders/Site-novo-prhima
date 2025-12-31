@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
     <header className={`main-header ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-6'}`}>
       <div className="header-container">
         <div className="logo-wrapper group" onClick={() => handleNavClick('home')}>
-          <div className="logo-image-wrapper">
+          <div className="logo-image-wrapper mr-1">
             {!imageError ? (
               <img 
                 src={LOGO_FILENAME} 
