@@ -118,7 +118,12 @@ export const ServicesSection: React.FC = () => {
           </div>
 
           <div className="sla-banner-buttons">
-            <button className="sla-button sla-button-primary">
+            <button className="sla-button sla-button-primary" onClick={() => {
+              const section = document.getElementById('contato');
+              if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }}>
               Solicitar Proposta
             </button>
             <button className="sla-button sla-button-secondary">

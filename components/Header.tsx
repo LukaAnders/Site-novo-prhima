@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
             )}
           </div>
           
-          <div className="logo-text-wrapper">
+          <div className="logo-text-wrapper -ml-8">
             <span className={`logo-title ${isScrolled ? 'text-navy' : 'text-white'}`}>PRHIMA</span>
             <span className="logo-subtitle">Mão de Obra e Serviços</span>
           </div>

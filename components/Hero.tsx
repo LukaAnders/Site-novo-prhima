@@ -6,6 +6,14 @@ export const Hero: React.FC = () => {
   const [imgError, setImgError] = useState(false);
   const HERO_IMAGE_FILENAME = "cara-de-terno.png"; 
 
+  // Função para rolar até a seção de contato (Atendimento Estratégico)
+  const scrollToAtendimento = () => {
+    const section = document.getElementById('contato');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-bg-wrapper">
@@ -36,7 +44,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="hero-button-group">
-            <button className="hero-button hero-button-primary">
+            <button className="hero-button hero-button-primary" onClick={scrollToAtendimento}>
               Solicitar Proposta <ArrowRight size={18} />
             </button>
             <button className="hero-button hero-button-secondary">
