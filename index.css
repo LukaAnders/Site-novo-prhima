@@ -78,7 +78,7 @@ body {
 
 /* Logo */
 .logo-wrapper {
-    @apply flex items-center gap-4 cursor-pointer;
+    @apply flex items-center cursor-pointer;
 }
 
 .logo-image {
@@ -141,7 +141,7 @@ body {
 }
 
 .about-section {
-    @apply py-20 bg-gray-50;
+    @apply py-12 bg-gray-50;
 }
 
 .about-container {
@@ -388,11 +388,11 @@ body {
 
 /* Footer  */
 .site-footer {
-    @apply bg-navy pt-24 pb-12 border-t border-white/10;
+    @apply bg-navy pt-12 pb-8 border-t border-white/10;
 }
 
 .footer-grid {
-    @apply grid md:grid-cols-4 gap-16 mb-20;
+    @apply grid md:grid-cols-4 gap-8 mb-10;
 }
 
 .footer-logo-column {
@@ -425,7 +425,7 @@ body {
 
 /* Governance Section  */
 .governance-section {
-    @apply py-20 bg-white;
+    @apply py-12 bg-white;
 }
 
 .governance-heading-wrapper {
@@ -534,7 +534,7 @@ body {
 }
 
 .hero-title {
-    @apply text-5xl lg:text-7xl font-black leading-none tracking-tighter;
+    @apply text-4xl lg:text-6xl font-black leading-tight tracking-tighter;
 }
 
 .hero-title-highlight {
@@ -644,7 +644,7 @@ body {
 
 /* Services Section */
 .services-section {
-    @apply py-24 bg-white;
+    @apply py-12 bg-white;
 }
 
 .services-heading-wrapper {
@@ -895,4 +895,34 @@ body {
 
 .trusted-by-logo-placeholder {
     @apply h-12 w-32 bg-white/20 rounded-md;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-carousel {
+    @apply relative w-full overflow-hidden;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.logo-carousel-track {
+    @apply flex;
+    animation: scroll 40s linear infinite;
+}
+
+.logo-carousel-item {
+    @apply h-12 w-auto mx-8 flex-shrink-0;
+    filter: grayscale(100%) opacity(60%);
+    transition: all 0.3s ease;
+}
+
+.logo-carousel-item:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.1);
 }

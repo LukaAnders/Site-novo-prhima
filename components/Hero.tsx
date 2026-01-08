@@ -6,6 +6,14 @@ export const Hero: React.FC = () => {
   const [imgError, setImgError] = useState(false);
   const HERO_IMAGE_FILENAME = "cara-de-terno.png"; 
 
+  // Função para rolar até a seção de contato (Atendimento Estratégico)
+  const scrollToAtendimento = () => {
+    const section = document.getElementById('contato');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   return (
     <section id="home" className="hero-section">
       <div className="hero-bg-wrapper">
@@ -25,9 +33,10 @@ export const Hero: React.FC = () => {
                 <span className="hero-eyebrow-text">Especialista em Blindagem Jurídica</span>
             </div>
             <h1 className="hero-title">
-              SUA OPERAÇÃO <br/>
-              <span className="hero-title-highlight">SEM RISCOS</span> <br/>
-              TRABALHISTAS.
+              <span className="text-2xl lg:text-4xl">TERCEIRIZAÇÃO DE MÃO DE OBRA</span> <br/>
+              <span className="hero-title-highlight text-6xl lg:text-5xl">
+                COM SEGURANÇA E RESPALDO JURÍDICO TRABALHISTA.
+              </span>
             </h1>
             <p className="hero-paragraph">
               Assumimos 100% da responsabilidade jurídica e operacional da sua mão de obra com segurança absoluta.
@@ -35,7 +44,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="hero-button-group">
-            <button className="hero-button hero-button-primary">
+            <button className="hero-button hero-button-primary" onClick={scrollToAtendimento}>
               Solicitar Proposta <ArrowRight size={18} />
             </button>
             <button className="hero-button hero-button-secondary">
