@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      const sections = ['home', 'sobre', 'servicos', 'governanca', 'contato'];
+      const sections = ['home', 'sobre', 'servicos','franquias', 'governanca', 'contato'];
       const scrollPos = window.scrollY + 120;
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
 
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="mobile-menu-content">
-          {['home', 'sobre', 'servicos', 'governanca', 'contato'].map((id) => (
+          {['home', 'sobre', 'servicos','franquias', 'governanca', 'contato'].map((id) => (
             <button key={id} onClick={() => handleNavClick(id)} className="mobile-nav-button">{id}</button>
           ))}
         </div>
