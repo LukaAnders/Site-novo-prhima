@@ -47,15 +47,10 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <div className="contact-details-grid">
+              
               <div className="contact-detail-item">
                 <div className="contact-detail-heading">
-                  <Phone size={20} className="contact-detail-icon" />
-                  <span className="contact-detail-title">Telefone</span>
-                </div>
-                <p className="contact-detail-text">(31) 3503-8700</p>
-              </div>
-              <div className="contact-detail-item">
-                <div className="contact-detail-heading">
+                  
                   <Mail size={20} className="contact-detail-icon" />
                   <span className="contact-detail-title">E-mail</span>
                 </div>
